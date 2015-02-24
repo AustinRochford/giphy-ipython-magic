@@ -3,6 +3,8 @@ from IPython.display import Image
 import requests
 
 API_ENDPOINT = 'http://api.giphy.com/v1/gifs/random'
+
+# This is the Giphy API's public beta key, see https://github.com/Giphy/GiphyAPI
 API_KEY = 'dc6zaTOxFJmzC'
 
 def giphy(tag):
