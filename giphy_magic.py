@@ -9,11 +9,16 @@ API_KEY = 'dc6zaTOxFJmzC'
 
 RANDOM_ON_NO_MATCH = False
 
+MAX_RATING = 'pg-13'
+
 def get_params(tag):
     params = {'api_key': API_KEY}
 
     if tag is not None:
         params['tag'] = tag
+
+    if MAX_RATING is not None:
+        params['rating'] = MAX_RATING
 
     return params
 
