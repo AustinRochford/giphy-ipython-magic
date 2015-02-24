@@ -1,11 +1,16 @@
 from IPython.display import Image
 
+import os
 import requests
 
 API_ENDPOINT = 'http://api.giphy.com/v1/gifs/random'
 
 # This is the Giphy API's public beta key, see https://github.com/Giphy/GiphyAPI
-API_KEY = 'dc6zaTOxFJmzC'
+PUBLIC_BETA_API_KEY = 'dc6zaTOxFJmzC'
+
+# We attempt to read a private API key from the environment, and default to the
+# public beta key if none is found.
+API_KEY = os.getenv('GIPHY_API_KEY', PUBLIC_BETA_API_KEY)
 
 RANDOM_ON_NO_MATCH = False
 

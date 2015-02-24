@@ -15,7 +15,7 @@ The magic can be loaded in two ways:
 
 ## Configuration
 
-* If you have recieved a private Giphy API key, you can replace the public beta key in `API_KEY`.
+* The script attempts to read `$GIPHY_API_KEY` from the environment and defaults to the public beta key if that variable is not found.
 * The constant `RANDOM_ON_NO_MATCH` controls what happens when Giphy cannot match the given tag.  If it is `False`, then a message is displayed.  If it is `True`, a random GIF is shown instead.
 * The constant `MAX_RATING` controls the [rating](https://github.com/Giphy/GiphyAPI#parameters-4) of the GIF returned by Giphy.
 
