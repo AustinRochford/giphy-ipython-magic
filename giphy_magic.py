@@ -17,7 +17,10 @@ def giphy(tag):
     json = r.json()
     data = json['data']
 
-    return Image(url=data['image_url'])
+    if data and 'image_url' in data:
+        return Image(url=data['image_url'])
+    else:
+        return 'Giphy could not match {}'.format(tag)
 
 def load_ipython_extension(ipython):
     ipython.register_magic_function(giphy, 'line')
