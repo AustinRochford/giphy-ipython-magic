@@ -7,11 +7,18 @@ API_ENDPOINT = 'http://api.giphy.com/v1/gifs/random'
 # This is the Giphy API's public beta key, see https://github.com/Giphy/GiphyAPI
 API_KEY = 'dc6zaTOxFJmzC'
 
+RANDOM_ON_NO_MATCH = False
+
+def get_params(tag):
+    params = {'api_key': API_KEY}
+
+    if tag is not None:
+        params['tag'] = tag
+
+    return params
+
 def giphy(tag):
-    params = {
-        'api_key': API_KEY,
-        'tag': tag
-    }
+    params = get_params(tag)
 
     r = requests.get(API_ENDPOINT, params=params)
     json = r.json()
@@ -19,8 +26,10 @@ def giphy(tag):
 
     if data and 'image_url' in data:
         return Image(url=data['image_url'])
+    elif RANDOM_ON_NO_MATCH:
+        return giphy(None)
     else:
-        return 'Giphy could not match {}'.format(tag)
+        return 'Giphy could not match {}'.format(tag),
 
 def load_ipython_extension(ipython):
     ipython.register_magic_function(giphy, 'line')
