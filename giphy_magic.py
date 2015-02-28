@@ -39,7 +39,7 @@ def giphy(tag):
     elif RANDOM_ON_NO_MATCH:
         return giphy(None)
     else:
-        return 'Giphy could not match {}'.format(tag),
+        return 'Giphy could not match {}'.format(tag)
 
 def load_ipython_extension(ipython):
     ipython.register_magic_function(giphy, 'line')
