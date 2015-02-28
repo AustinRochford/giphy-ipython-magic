@@ -11,7 +11,7 @@ To install, do `pip install giphy-ipython-magic`.  The only dependencies are `IP
 The magic can be loaded in two ways:
 
 1. Execute `%load_ext giphy_magic`.  This must be run in every notebook where you want to use `%giphy`.
-2. Add `'giphy_magic'` to `c.IPKernelApp.extensions`.  This will cause the magic to be loaded into every notebook by default.
+2. Add `'giphy_magic'` to `c.IPKernelApp.extensions` in your profile's `ipython_kernel_config.py` file.  This will cause the magic to be loaded into every notebook by default.
 
 ## Configuration
 
