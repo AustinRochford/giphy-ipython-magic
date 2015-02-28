@@ -19,6 +19,10 @@ The magic can be loaded in two ways:
 * The constant `RANDOM_ON_NO_MATCH` controls what happens when Giphy cannot match the given tag.  If it is `False`, then a message is displayed.  If it is `True`, a random GIF is shown instead.
 * The constant `MAX_RATING` controls the [rating](https://github.com/Giphy/GiphyAPI#parameters-4) of the GIF returned by Giphy.
 
+## Development
+
+Developers can test their changes to `giphy-ipython-magic` in many ways, but it may be easiest to use the accompanying `Vagrantfile`.  `vagrant up` will initialize a virtual machine with all of the necessary dependencies.  After it completes, connect to the VM with `vagrant ssh` and run `PYTHONPATH=/vagrant ipython notebook --ip=0.0.0.0 --no-browser`.  You can then access the IPython notebook server at `localhost:8888`.  Running `%load_ext giphy_magic` will load the extension.  Note that it is necessary to restart the IPython notebook server to test changes to the `giphy_magic` module.
+
 ## License and attribution
 
 This software is distributed under the [MIT License](https://raw.githubusercontent.com/AustinRochford/giphy-ipython-magic/master/LICENSE).  If you can make money off of it, good for you!
