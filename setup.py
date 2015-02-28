@@ -5,10 +5,10 @@ except ImportError:
 
 setup(
     name='giphy-ipython-magic',
-    version='0.0.1',
+    version='0.0.2',
     author="Austin Rochford",
     author_email="austin.rochford@gmail.com",
-    description="giphy line magic for ipython 2.0+",
+    description="giphy line magic for ipython 2 and 3",
     install_requires=['ipython>=2.0', 'requests'],
     keywords="ipython",
     license="MIT",
